@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdio.h>
 int _strlen(char *str);
 
 /**
@@ -12,31 +13,44 @@ int _strlen(char *str);
 int _printf(const char *format, ...)
 {
 	va_list args;
-	char *str;
-	int len, j;
+	/*char *str,*/
+      	char ch, *st;
+	int len;
 
-	j = 0;
-	while (*format)
+	va_start(args, format);
+	/*str = va_arg(args, char *);*/
+	len = 0;
+        while (*format)
 	{
-		if (format[j] == '%')
+		if (*format == '%')
 		{
-			switch (format[j+1])
+			format++;
+			switch (*format)
 			{
 				case 'c':
-					va_arg(args, int);
-					break;
+					ch = va_arg(args, int);
+					write (1, &ch, 1);
+					len++;
+					printf("length check c:%d\n", len);
+				       	break;
 				case 's':
-					va_arg(args, char *);
+					st = va_arg(args, char *);
+					write (1, st, _strlen(st));
+					len = len + _strlen(st);
+					printf("length check s:%d\n", len);
 					break;
 				default:
 					break;
 			}
-			j++;
 		}
+		else
+		{
+			write (1, format, 1);
+			len++;
+			printf("length check else:%d\n", len);
+		}		
+		format++;
 	}
-	va_start(args, format);
-	str = va_arg(args, char *);
-	len = _strlen(str);
 	va_end(args);
 	return (len);
 }
@@ -50,10 +64,10 @@ int _printf(const char *format, ...)
 
 int _strlen(char *str)
 {
-	int i;
 	int length = 0;
-	for (i = 0; str[i] != '\0'; i++)
+	while (*str != '\0')
 	{
+		str++;
 		length++;
 	}
 	return (length);
