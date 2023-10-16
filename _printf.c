@@ -41,13 +41,13 @@ int _printf(const char *format, ...)
 					break;
 				case 'd':
 					num_1 = va_arg(args, int);
-					write(1, &num_1, get_int_length(num_1));
-					count++;
+					_itoa(num_1);
+                                        count += _itoa(num_1);
 					break;
 				case 'i':
 					num_2 = va_arg(args, int);
-					write(1, &num_2, get_int_length(num_2));
-					count++;
+					_itoa(num_2);
+                                        count += _itoa(num_2);
 					break;
 				default:
 					break;

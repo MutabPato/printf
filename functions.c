@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 
 /**
  * _strlen - returns the length of a string.
@@ -20,25 +21,41 @@ int _strlen(char *s)
 }
 
 /**
- * get_int_length - returns the length of an integer.
+ * _itoa - converts an integer to a string
  * @num: integer
  *
- * Return: integer length
+ * Return: nothing.
  */
-
-int get_int_length(int num)
+int _itoa(int num)
 {
-	int len = 0;
+	int i = 0, len;
+	char arr[20];
+	int isNeg = 0;
 
-	if (num == 0)
-		return (1);
 	if (num < 0)
-		len++;
-
+	{
+		isNeg = 1;
+		num = -num;
+	}
+	if (num == 0)
+	{
+		write(1, "0", 1);
+	}
 	while (num > 0)
 	{
+		arr[i] = num % 10 + '0';
 		num = num / 10;
-		len++;
+		i++;
+	}
+	if (isNeg)
+	{
+		arr[i] = '-';
+		i++;
+	}
+	while (i > 0)
+	{
+		len += write(1, &arr[i -1], 1);
+		i--;
 	}
 	return (len);
 }

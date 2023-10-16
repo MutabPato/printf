@@ -3,6 +3,6 @@
 
 int _printf(const char *format, ...);
 int _strlen(char *str);
-int get_int_length(int num);
+int _itoa(int num);
 
 #endif /* MAIN_H */
