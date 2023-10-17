@@ -16,6 +16,8 @@
 
 int process_format_specifier(const char **format, va_list args)
 {
+	if (args == NULL)
+		return (-1);
 	switch (**format)
 	{
 		case 'c':
