@@ -28,8 +28,8 @@ int main(void)
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
 
-/*	_printf("%\n"); 
-	printf( "%\n"); */
+	_printf("1percentage %t \n"); 
+	printf("2percentage %t \n");
 	
 	return (0);
 }
