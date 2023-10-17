@@ -29,7 +29,7 @@ int main(void)
 	printf("Len:[%d]\n", len2);
 
 	_printf("%\n");
-	printf( "%\n");
-	
+	printf("%\n");
+
 	return (0);
 }
