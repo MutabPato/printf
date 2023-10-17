@@ -31,10 +31,6 @@ int process_format_specifier(const char **format, va_list args)
 			return (print_integer(args));
 		default:
 			print_percent();
-<<<<<<< HEAD
-=======
-		/*	write(1, format, 1);*/
->>>>>>> bc466f2c7392f5812e3544e0a4220a73c1703cb7
 			return (0);
 	}
 }
