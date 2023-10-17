@@ -10,30 +10,28 @@
  * to process certain specifiers.
  *
  * Return: the number of characters printed as a result of handling the
- * format specifier. Returns 0 if an unsupported or unknown specifier 
+ * format specifier. Returns 0 if an unsupported or unknown specifier
  * is encountered, indicating an error.
  */
 
 int process_format_specifier(const char **format, va_list args)
 {
+	if (args == NULL)
+		return (-1);
 	switch (**format)
 	{
 		case 'c':
-			(*format)++;
-			return print_char(args);
+			return (print_char(args));
 		case 's':
-			(*format)++;
-			return print_string(args);
+			return (print_string(args));
 		case '%':
-			(*format)++;
-			return print_percent();
+			return (print_percent());
 		case 'd':
 		case 'i':
-			(*format)++;
-			return print_integer(args);
+			return (print_integer(args));
 		default:
 			print_percent();
-			write(1, *format, 1);
+			write(1, format, 1);
 			return (0);
 	}
 }
