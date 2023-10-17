@@ -19,17 +19,13 @@ int process_format_specifier(const char **format, va_list args)
 	switch (**format)
 	{
 		case 'c':
-			(*format)++;
 			return (print_char(args));
 		case 's':
-			(*format)++;
 			return (print_string(args));
 		case '%':
-			(*format)++;
 			return (print_percent());
 		case 'd':
 		case 'i':
-			(*format)++;
 			return (print_integer(args));
 		default:
 			return (0);
