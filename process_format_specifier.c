@@ -31,7 +31,6 @@ int process_format_specifier(const char **format, va_list args)
 			return (print_integer(args));
 		default:
 			print_percent();
-			write(1, format, 1);
 			return (0);
 	}
 }
