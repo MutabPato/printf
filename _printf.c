@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	char ch, symbol, *str;
-	int count, num_1, num_2;
+	int count, num_1, num_2, len;
 
 	symbol = '%';
 	va_start(args, format);
@@ -41,13 +41,13 @@ int _printf(const char *format, ...)
 					break;
 				case 'd':
 					num_1 = va_arg(args, int);
-					_itoa(num_1);
-                                        count += _itoa(num_1);
+					len = _itoa(num_1);
+					count += len;
 					break;
 				case 'i':
 					num_2 = va_arg(args, int);
-					_itoa(num_2);
-                                        count += _itoa(num_2);
+					len = _itoa(num_2);
+					count += len;
 					break;
 				default:
 					break;

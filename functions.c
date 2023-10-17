@@ -26,6 +26,7 @@ int _strlen(char *s)
  *
  * Return: nothing.
  */
+
 int _itoa(int num)
 {
 	int i = 0, len;
@@ -54,7 +55,7 @@ int _itoa(int num)
 	}
 	while (i > 0)
 	{
-		len += write(1, &arr[i -1], 1);
+		len += write(1, &arr[i - 1], 1);
 		i--;
 	}
 	return (len);
