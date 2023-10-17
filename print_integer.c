@@ -7,7 +7,7 @@
  */
 int print_integer(va_list args)
 {
-	int num = va_args(args, int);
+	int num = va_arg(args, int);
 	int len = _itoa(num);
 	return (len);
 }

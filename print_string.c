@@ -7,7 +7,7 @@
  */
 int print_string(va_list args)
 {
-	char *str = va_args(args, char *);
+	char *str = va_arg(args, char *);
 	int len = _strlen(str);
 	return (write(1, str, len));
 }
