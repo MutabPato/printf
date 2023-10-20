@@ -14,6 +14,11 @@ int print_binary(va_list args)
 	int i, len;
 
 	i = 0;
+	if (num == 0)
+	{
+		arr[i] = 0 + '0';
+		i++;
+	}
 	while (num > 0)
 	{
 		arr[i] = num % 2 + '0';
@@ -57,6 +62,11 @@ int print_octal(va_list args)
 	int i, len;
 
 	i = 0;
+	if (num == 0)
+	{
+		arr[i] = 0 + '0';
+		i++;
+	}
 	while (num > 0)
 	{
 		arr[i] = num % 8 + '0';
@@ -89,6 +99,12 @@ int hex_low(va_list args)
 
 	i = 0;
 	j = 0;
+
+	if (num == 0)
+	{
+		arr[i] = 0 + '0';
+		i++;
+	}
 	while (num > 0)
 	{
 		rem = num % 16;
@@ -132,6 +148,12 @@ int hex_upper(va_list args)
 
 	i = 0;
 	j = 0;
+
+	if (num == 0)
+	{
+		arr[i] = 0 + '0';
+		i++;
+	}
 	while (num > 0)
 	{
 		rem = num % 16;
