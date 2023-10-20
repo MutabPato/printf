@@ -47,3 +47,21 @@ void print_address(va_list args)
 		str = "(nul)";
 	(write(1, str, 8));
 }
+
+/**
+ * reverse_string - reverses a string
+ * @args: arguments passed to the function
+ *
+ * Return: length of a string.
+ */
+
+int reverse_string(va_list args)
+{
+	char* text = va_arg(args, char*);
+	int i;
+	int len = _strlen(text);
+
+	for (i = len - 1; i >= 0; i--)
+		write(1, &text[i], 1);
+	return (len);
+}
