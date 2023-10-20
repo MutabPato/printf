@@ -41,6 +41,7 @@ int main(void)
 	printf("Len:[%d]\n", len2);
 	_printf("Unknown:[%r]\n", "I am a string !");
 	printf("Unknown:[%r]\n");
+	_printf("Rot 13:[%R]\n", "ABCDEF");
 	_printf("%b\n", 98);
 	return (0);
 }

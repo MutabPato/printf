@@ -16,7 +16,10 @@ int print_octal(va_list args);
 int hex_low(va_list args);
 int hex_upper(va_list args);
 int reverse_string(va_list args);
+char get_rot13_char(char input_char);
+int print_rot13(va_list args);
 
+/* helper functions */
 int _strlen(char *str);
 int _itoa(int num);
 int unsigned_itoa(unsigned int num);

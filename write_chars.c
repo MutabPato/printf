@@ -57,11 +57,28 @@ void print_address(va_list args)
 
 int reverse_string(va_list args)
 {
-	char* text = va_arg(args, char*);
+	char *text = va_arg(args, char *);
 	int i;
 	int len = _strlen(text);
 
 	for (i = len - 1; i >= 0; i--)
 		write(1, &text[i], 1);
+	return (len);
+}
+
+/**
+ * print_string - replace format specifier with string
+ * @args: arguments passed to the function
+ *
+ * Return: character to be printed.
+ */
+
+int custom_string(va_list args)
+{
+	char *str = va_arg(args, char *);
+	int len = _strlen(str);
+
+	if (str == NULL)
+		str = "(nul)";
 	return (len);
 }
