@@ -27,8 +27,6 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			count += process_format_specifier(&format, args);
-			if (count < 0)
-				return (-1);
 		}
 		else
 		{
