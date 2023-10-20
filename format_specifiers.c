@@ -35,8 +35,8 @@ int process_format_specifier(const char **format, va_list args)
 			return (hex_low(args));
 		case 'X':
 			return (hex_upper(args));
-		case 'p':
-			return (print_address(args));
+		/* case 'p': */
+			/* return (print_address(args)); */
 		default:
 			print_percent();
 			write(1, *format, 1);
